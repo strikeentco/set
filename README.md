@@ -1,8 +1,8 @@
 set [![License](https://img.shields.io/npm/l/@strikeentco/set.svg)](https://github.com/strikeentco/set/blob/master/LICENSE)  [![npm](https://img.shields.io/npm/v/@strikeentco/set.svg)](https://www.npmjs.com/package/@strikeentco/set)
 ==========
-[![Build Status](https://travis-ci.org/strikeentco/set.svg)](https://travis-ci.org/strikeentco/set)  [![node](https://img.shields.io/node/v/@strikeentco/set.svg)](https://www.npmjs.com/package/@strikeentco/set) [![Test Coverage](https://api.codeclimate.com/v1/badges/450e530044d31f690dc5/test_coverage)](https://codeclimate.com/github/strikeentco/set/test_coverage) [![bitHound Score](https://www.bithound.io/github/strikeentco/set/badges/score.svg)](https://www.bithound.io/github/strikeentco/set)
+[![Build Status](https://travis-ci.org/strikeentco/set.svg)](https://travis-ci.org/strikeentco/set)  [![node](https://img.shields.io/node/v/@strikeentco/set.svg)](https://www.npmjs.com/package/@strikeentco/set) [![Test Coverage](https://api.codeclimate.com/v1/badges/450e530044d31f690dc5/test_coverage)](https://codeclimate.com/github/strikeentco/set/test_coverage)
 
-One of the smallest (*24 sloc*) and most effective implementations of setting a nested value on an object.
+One of the smallest (*31 sloc*) and most effective implementations of setting a nested value on an object.
 
 # Usage
 
@@ -41,4 +41,4 @@ set({ a: { b: 'c' } }, 'a:b', 'd', ':');
 ## License
 
 The MIT License (MIT)<br/>
-Copyright (c) 2018 Alexey Bystrov
+Copyright (c) 2018-present Alexey Bystrov

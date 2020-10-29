@@ -106,4 +106,42 @@ describe('set', () => {
     set(o, 'a.b', date);
     should(o.a.b.getTime()).be.eql(date.getTime());
   });
+
+  it('should not indirectly set Object properties', () => {
+    const o = {};
+    set(o, 'constructor.a', 1);
+    should(o.constructor.a).be.eql(undefined);
+
+    set(o, ['constructor', 'b'], 1);
+    should(o.constructor.b).be.eql(undefined);
+  });
+
+  it('should not indirectly set Object properties', () => {
+    const o = {};
+    set(o, '__proto__.a', 1);
+    should(o.a).be.eql(undefined);
+
+    set(o, ['__proto__', 'b'], 1);
+    should(o.b).be.eql(undefined);
+  });
+
+  it('should not indirectly set Object properties', () => {
+    const o = {};
+    const ob = { o };
+    set(o, 'ob.constructor.a', 1);
+    should(ob.a).be.eql(undefined);
+
+    set(o, ['ob.constructor', 'b'], 1);
+    should(ob.b).be.eql(undefined);
+  });
+
+  it('should not indirectly set Object properties', () => {
+    const o = {};
+    const ob = { o };
+    set(o, 'ob.__proto__.a', 1);
+    should(ob.a).be.eql(undefined);
+
+    set(o, ['ob.__proto__', 'b'], 1);
+    should(ob.b).be.eql(undefined);
+  });
 });
