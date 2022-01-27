@@ -1,9 +1,9 @@
 'use strict';
 
-/* eslint-disable no-continue */
+/* eslint-disable no-continue, eqeqeq */
 
 const isObject = (val) => typeof val === 'object' || typeof val === 'function';
-const isProto = (val, obj) => val === '__proto__' || (val === 'constructor' && typeof obj.constructor === 'function');
+const isProto = (val, obj) => val == '__proto__' || (val == 'constructor' && typeof obj.constructor === 'function');
 const set = (obj, parts, length, val) => {
   let tmp = obj;
   let i = 0;
