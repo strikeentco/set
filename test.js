@@ -114,6 +114,9 @@ describe('set', () => {
 
     set(o, ['constructor', 'b'], 1);
     should(o.constructor.b).be.eql(undefined);
+
+    set(o, [['constructor'], 'b'], 1);
+    should(o.constructor.b).be.eql(undefined);
   });
 
   it('should not indirectly set Object properties', () => {
@@ -122,6 +125,9 @@ describe('set', () => {
     should(o.a).be.eql(undefined);
 
     set(o, ['__proto__', 'b'], 1);
+    should(o.b).be.eql(undefined);
+
+    set(o, [['__proto__'], 'b'], 1);
     should(o.b).be.eql(undefined);
   });
 
@@ -133,6 +139,9 @@ describe('set', () => {
 
     set(o, ['ob.constructor', 'b'], 1);
     should(ob.b).be.eql(undefined);
+
+    set(o, [['ob.constructor'], 'b'], 1);
+    should(ob.b).be.eql(undefined);
   });
 
   it('should not indirectly set Object properties', () => {
@@ -142,6 +151,9 @@ describe('set', () => {
     should(ob.a).be.eql(undefined);
 
     set(o, ['ob.__proto__', 'b'], 1);
+    should(ob.b).be.eql(undefined);
+
+    set(o, [['ob.__proto__'], 'b'], 1);
     should(ob.b).be.eql(undefined);
   });
 });
